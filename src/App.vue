@@ -5,6 +5,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <template>
   <el-button type="primary">Primary</el-button>
+  <RouterView />
 </template>
 
 <style scoped>
