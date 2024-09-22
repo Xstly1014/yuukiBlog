@@ -1,1 +1,12 @@
-<template>首页 <RouterView /></template>
+<script setup>
+import LayoutNav from "./components/LayoutNav.vue";
+import LayoutHead from "./components/LayoutHead.vue";
+import LayoutFoot from "./components/LayoutFoot.vue";
+</script>
+
+<template>
+  <LayoutNav />
+  <LayoutHead />
+  <RouterView />
+  <LayoutFoot />
+</template>
