@@ -1,10 +1,27 @@
+<script setup>
+import { ref } from "vue";
+
+// 使用 import 语法导入图片
+const avatarSrc = new URL(
+  "@/assets/images/dfa42d3fa428185c05d5670da7f85c8.jpg",
+  import.meta.url
+).href;
+
+const handleClick = () => {
+  console.log("前往主页");
+};
+const confirmLogout = () => {
+  console.log("已退出登录");
+};
+</script>
+
 <template>
   <header class="navbar">
     <div class="container">
       <template v-if="true">
         <el-dropdown split-button @click="handleClick">
           <span class="el-dropdown-link">
-            <a href="javascript:;">个人主页</a>
+            <RouterLink to="/">个人主页</RouterLink>
           </span>
           <template #dropdown>
             <el-dropdown-menu>
@@ -19,13 +36,13 @@
         <nav class="nav-links">
           <ul>
             <li>
-              <a href="javascript:;">播放音乐</a>
+              <RouterLink to="/category/music">播放音乐</RouterLink>
             </li>
             <li>
-              <a href="javascript:;">播放视频</a>
+              <RouterLink to="/category/vedio">播放视频</RouterLink>
             </li>
             <li>
-              <a href="javascript:;">联系方式</a>
+              <RouterLink to="/category/contact">联系方式</RouterLink>
             </li>
           </ul>
         </nav>
@@ -34,12 +51,12 @@
           <ul>
             <li>
               <el-badge :value="1" :offset="[-4, -2]" class="item">
-                <a href="javascript:;">笔记</a>
+                <RouterLink to="/category/note">笔记</RouterLink>
               </el-badge>
             </li>
             <li>
               <el-badge :value="1" :offset="[-4, -2]" class="item">
-                <a href="javascript:;">日记</a>
+                <RouterLink to="/category/diary">日记</RouterLink>
               </el-badge>
             </li>
             <li>
@@ -51,9 +68,7 @@
               >
                 <template #reference>
                   <span>
-                    <el-avatar
-                      src="src\assets\images\dfa42d3fa428185c05d5670da7f85c8.jpg"
-                    />
+                    <el-avatar :src="avatarSrc" />
                   </span>
                 </template>
               </el-popconfirm>
@@ -71,15 +86,6 @@
     </div>
   </header>
 </template>
-
-<script setup>
-const handleClick = () => {
-  console.log("前往主页");
-};
-const confirmLogout = () => {
-  console.log("已退出登录");
-};
-</script>
 
 <style scoped lang="scss">
 /* 基础样式 */

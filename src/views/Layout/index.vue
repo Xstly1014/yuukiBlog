@@ -7,6 +7,6 @@ import LayoutFoot from "./components/LayoutFoot.vue";
 <template>
   <LayoutNav />
   <LayoutHead />
-  <RouterView />
+  <RouterView :key="$route.fullPath" />
   <LayoutFoot />
 </template>

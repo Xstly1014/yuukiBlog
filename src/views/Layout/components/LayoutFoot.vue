@@ -6,9 +6,9 @@
     <div class="container">
       <div class="footer-links">
         <a href="#about">关于我</a>
-        <a href="#services">联系地址</a>
-        <a href="#contact">API-one</a>
-        <a href="#privacy">API-two</a>
+        <a href="#contact">联系地址</a>
+        <a href="#404">API-one</a>
+        <a href="#404">API-two</a>
       </div>
       <div class="social-media">
         <a href="#"><i class="iconfont icon-facebook"></i></a>

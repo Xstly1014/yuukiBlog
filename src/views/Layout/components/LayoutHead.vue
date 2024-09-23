@@ -4,47 +4,80 @@ const confirmVCC = () => {
   console.log("前往VCC主页");
 };
 
+import { h } from "vue";
+import { ElNotification } from "element-plus";
 // 菜单头
 </script>
 
 <template>
   <header class="app-header">
     <div class="container">
-      <el-popconfirm
-        @confirm="confirmVCC"
-        title="是否前往vcc主页？"
-        confirm-button-text="确认"
-        cancel-button-text="取消"
-      >
-        <template #reference>
-          <span>
-            <h1 class="logo">
-              <RouterLink to="/">深圳大学主页</RouterLink>
-            </h1>
-          </span>
-        </template>
-      </el-popconfirm>
+      <span>
+        <h1 class="logo">
+          <a href="https://vcc.tech/people" target="_blank">深圳大学主页</a>
+        </h1>
+      </span>
 
       <!-- button -->
       <el-row :gutter="20">
         <el-col :span="6">
           <div class="grid-content ep-bg-purple">
-            <el-button type="primary">Html&Css</el-button>
+            <el-popover
+              placement="bottom"
+              title="Html&Css"
+              :width="200"
+              trigger="click"
+              content="not found"
+            >
+              <template #reference>
+                <el-button>Html&Css</el-button>
+              </template>
+            </el-popover>
           </div>
         </el-col>
         <el-col :span="6"
           ><div class="grid-content ep-bg-purple">
-            <el-button type="success">JavaScript</el-button>
+            <el-popover
+              placement="bottom"
+              title="JavaScript"
+              :width="200"
+              trigger="click"
+              content="not found"
+            >
+              <template #reference>
+                <el-button>JavaScript</el-button>
+              </template>
+            </el-popover>
           </div></el-col
         >
         <el-col :span="6"
           ><div class="grid-content ep-bg-purple">
-            <el-button type="danger">Ajax</el-button>
+            <el-popover
+              placement="bottom"
+              title="Ajax"
+              :width="200"
+              trigger="click"
+              content="not found"
+            >
+              <template #reference>
+                <el-button>Ajax</el-button>
+              </template>
+            </el-popover>
           </div></el-col
         >
         <el-col :span="6"
           ><div class="grid-content ep-bg-purple">
-            <el-button type="warning">Vue</el-button>
+            <el-popover
+              placement="bottom"
+              title="Vue"
+              :width="200"
+              trigger="click"
+              content="not found"
+            >
+              <template #reference>
+                <el-button>Vue</el-button>
+              </template>
+            </el-popover>
           </div></el-col
         >
       </el-row>
@@ -68,13 +101,20 @@ const confirmVCC = () => {
   }
 
   .container {
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     .el-button {
       width: 85px;
+      background-color: #fff;
+      color: black;
+      border: 1px solid black;
+    }
+
+    .el-row {
+      position: relative;
+      left: -10px;
     }
   }
   .el-carousel__item h3 {
@@ -116,8 +156,10 @@ const confirmVCC = () => {
     position: relative;
     border-bottom: 1px solid #e7e7e7;
     line-height: 32px;
+    left: -20px;
 
     .el-button {
+      margin-top: -4px;
       width: 50px;
     }
 
@@ -125,6 +167,9 @@ const confirmVCC = () => {
       width: 140px;
       padding-left: 5px;
       color: #666;
+      border: 1px solid black;
+      height: 32px;
+      border-radius: 3px;
     }
   }
 
